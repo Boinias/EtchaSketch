@@ -8,13 +8,15 @@
     height: 500px;
     border-radius: 1px;
     outline: 5px solid black;
-    background-color: red;
+    background-color: white;
     margin: auto;
     flex-wrap: wrap
 }
 
 .square {
   background: white;
+  border: black;
+  border-width: 5px;
 }
 
 
@@ -36,6 +38,15 @@
 #userInput {
     margin: 5px;
 }
+
+#resInput {
+    margin: 5px;
+}
+
+#play {
+    margin: 5px;
+}
+
 
 
 

@@ -1,6 +1,6 @@
 //Reset
-
-function promptFunc () {
+/*
+function reset () {
   var squares = document.getElementsByClassName('square');
 
   for (var i = 0; i < squares.length; i++) {
@@ -9,18 +9,16 @@ function promptFunc () {
   }
 }
 
-document.getElementById('reset').addEventListener('click', promptFunc);
+document.getElementById('reset').addEventListener('click', reset);*/
 
 
 //Choose your res
 
-let resPrompt = 300
-//function resInput () {
-   //let resPrompt = prompt("Choose your res")
-   //resPrompt
-  //ive disabled the above and just made the value 5 for testing purposes
-//}
-
+var resPrompt;
+function resolution () {
+  var aPrompt = (prompt("Choose your res"));
+  resPrompt = Number(aPrompt)
+}
 
 //I've made 4 squares manually for now. I've inputted the width and successfully assigned each square to the class "square"
 
@@ -34,14 +32,23 @@ for(var i=0; i < (resPrompt*resPrompt); i++){
    makeSquare.appendChild(newSquare);
 }*/
 
-let canvas = document.getElementById('canvas');
-    for (let i = 0; i <= (resPrompt*resPrompt); i++) {
-        let makeSquare = document.createElement('div');
-      makeSquare.style.width = `${500/resPrompt}px`;
-      makeSquare.style.height = `${500/resPrompt}px`;
-      makeSquare.setAttribute("class", "square");
-    document.getElementById('canvas').appendChild(makeSquare);
-    }
+function play () {
+    const canvas = document.getElementById('canvas');
+        for (let i = 0; i <= (resPrompt*resPrompt); i++) {
+            let makeSquare = document.createElement('div');
+          makeSquare.style.width = `${500/resPrompt}px`;
+          makeSquare.style.height = `${500/resPrompt}px`;
+          makeSquare.setAttribute("class", "square");
+        document.getElementById('canvas').appendChild(makeSquare);
+        }
+  
+  const allSquares = document.querySelectorAll('.square')
+allSquares.forEach(function(e){
+  e.addEventListener('mouseover', function (e) {
+     e.target.style.background = "black";
+  });
+});
+}
 
 /*
 const square = document.createElement("div");
@@ -69,10 +76,3 @@ document.getElementById("canvas").appendChild(square3);
 
 // Mouseover
 
-const allSquares = document.querySelectorAll('.square')
-allSquares.forEach(function(e){
-  e.addEventListener('mouseover', function (e) {
-     e.target.style.background = "black";
-    //need to make this a toggle thing not just a change colour thing
-  });
-});
